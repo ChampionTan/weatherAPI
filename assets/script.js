@@ -109,7 +109,7 @@ var getWeather = function (data) {
 		})
 		.then(function (data) {
 			displayWeather(data, loc);
-			storageAdd(lat, lon);
+			
 		})
 		.catch(function (error) {
 			console.log(error);
