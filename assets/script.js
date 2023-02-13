@@ -81,8 +81,8 @@ var displayForecast = function (data) {
 	}
 	$('#forecast-card').append(forecastDiv);
 }
-
 var getForecast = function (data) {
+
 	var lat = (data[0].lat);
 	var lon = (data[0].lon);
 	var forecast = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&units=imperial";
@@ -155,7 +155,7 @@ var fetchSearch = function () {
 var displaySearch = function (data) {
 	var city = (data.name);
 	var temp = (data.main.temp);
-	var searchCity = $('<button>').addClass('btn btn-primary border');
+	var searchCity = $('<button>').addClass('btn btn-primary border searchWeather');
 	var searchTemp = $('<span>').addClass('badge text-bg-secondary');
 	searchCity.attr('id', city)
 	searchCity.text(city);
@@ -195,7 +195,7 @@ var displayForecast = function (data) {
 	$('#forecast-card').append(forecastDiv);
 }
 
-$(document).on('click', '.btn-primary', function (event) {
+$(document).on('click', '.searchWeather', function (event) {
 	event.preventDefault();
 	if ($(this).attr('id')) {
 		var q = $(this).attr('id');
